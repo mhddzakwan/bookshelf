@@ -6,12 +6,11 @@ function App() {
   const [books, setBooks] = useState([]);
   const [editingBook, setEditingBook] = useState(null);
 
+  // ? UseEffect = menjalankan efek samping ketika komponen dirender, dan bisa di-trigger lagi berdasarkan perubahan data tertentu.
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(
-          "https://books-api-sandy.vercel.app/books"
-        );
+        const response = await fetch("https://books-api-4t5f.vercel.app/books");
         const books = await response.json();
         setBooks(books.data);
       } catch (error) {
@@ -22,7 +21,7 @@ function App() {
 
   const addBook = async (newBook) => {
     try {
-      const res = await fetch("https://books-api-sandy.vercel.app/books", {
+      const res = await fetch("https://books-api-4t5f.vercel.app/books", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newBook),
@@ -43,7 +42,7 @@ function App() {
   const updateBook = async (updatedBook) => {
     try {
       const res = await fetch(
-        `https://books-api-sandy.vercel.app/books/${updatedBook.id}`,
+        `https://books-api-4t5f.vercel.app/books/${updatedBook.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -75,12 +74,9 @@ function App() {
 
   const deleteBook = async (id) => {
     try {
-      const res = await fetch(
-        `https://books-api-sandy.vercel.app/books/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`https://books-api-4t5f.vercel.app/books/${id}`, {
+        method: "DELETE",
+      });
 
       if (!res.ok) {
         throw new Error("Failed to delete book");
