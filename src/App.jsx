@@ -100,7 +100,7 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-800">Book Manager</h1>
+          <h1 className="text-3xl font-bold text-gray-800">Book Managers</h1>
           <p className="text-gray-600 mt-2">Manage your book collection</p>
         </header>
         <div className="grid md:grid-cols-2 gap-8">
