@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("https://books-api-sandy.vercel.app//books");
+        const response = await fetch("https://books-api-sandy.vercel.app/books");
         const books = await response.json();
         setBooks(books.data);
       } catch (error) {
